@@ -62,7 +62,7 @@ public class ContactsBookUI {
         System.out.println("[6]- Salir");
     }
     
-    public static void printMenuAtributos() {
+    public static int printMenuAtributos() {
         System.out.println("Seleccione la opcion que desea editar: ");
         System.out.println("[1]- Nombre");
         System.out.println("[2]- Apellido");
@@ -71,6 +71,8 @@ public class ContactsBookUI {
         System.out.println("[5]- Telefono móvil");
         System.out.println("[6]- Dirección");
         System.out.println("¡¡ Para regresar al menu anterior ingrese [0] !!");
+        int a =ingresoInt();
+        return a;
     }
     public static void printRepeat(){
         

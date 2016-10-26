@@ -38,14 +38,15 @@ public class ContactsBook implements NewInterface {
     }
 
     @Override
-    public void printContactsKeys() {
+    public int printContactsKeys() {
 
         for (int i = 0; i < contactos.size(); i++) {
             ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
         }
-
-        ContactsBookUI.printContact(contactos.get(lector.nextInt() - 1));
-
+        //por si las moscas
+        int x = Integer.parseInt(lector.nextLine());
+        ContactsBookUI.printContact(contactos.get(x - 1));
+        return x;
     }
 
     @Override
@@ -59,38 +60,80 @@ public class ContactsBook implements NewInterface {
     }
 
     @Override
-    public void updatecontact() {
+    public void updateContact() {
 
-        printContactsKeys();
-        ContactsBookUI.printMenuAtributos();
+        int x = printContactsKeys();
+        int y = ContactsBookUI.printMenuAtributos();
+
+        switch (y) {
+
+
+
+            // MANEJO DE ERRORES DE ENTRADA
+            // MANEJO DE ERRORES DE ENTRADA
+            // MANEJO DE ERRORES DE ENTRADA
+            // MANEJO DE ERRORES DE ENTRADA
+
+            case 1:
+                // se ingresa un string valido
+                contactos.get(x - 1).setNombre(lector.nextLine());
+                break;
+            case 2:
+                // se ingresa un string valido
+                contactos.get(x - 1).setApellido(lector.nextLine());
+                break;
+            case 3:
+                boolean b = true;
+                ArrayList<String> correos = new ArrayList();
+                ContactsBookUI.printString("Puede ingresar multiples correos"
+                        + " electronicos, cuando desee terminar ingrese 0");
+                while (b) {
+                    String correo = lector.nextLine();
+                    if (correo == "0") {
+                        b = false;
+                    } else {
+                        correos.add(correo);
+                    }
+                }
+                String[] a = new String[correos.size()];
+                contactos.get(x - 1).setCorreosElectronicos(correos.toArray(a));
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+        }
 
     }
 
     public static void main(String args[]) {
-        ContactsBookUI.printWelcome();
+
         int opc;
-        do{
-        ContactsBookUI.printMethodOptions();
-        opc = ContactsBookUI.ingresoInt();
-        switch (opc) {
-            case 1:
+        do {
+            ContactsBookUI.printMethodOptions();
+            opc = ContactsBookUI.ingresoInt();
+            switch (opc) {
+                case 1:
 
-                break;
-            case 2:
+                    break;
+                case 2:
 
-                break;
-            case 3:
+                    break;
+                case 3:
 
-                break;
-            case 4:
+                    break;
+                case 4:
 
-                break;
-            case 5:
+                    break;
+                case 5:
 
-                break;
+                    break;
 
-        }
-        ContactsBookUI.printRepeat();
-        }while(opc==6);
+            }
+            ContactsBookUI.printRepeat();
+        } while (opc == 6);
+
     }
 }
