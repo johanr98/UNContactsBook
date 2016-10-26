@@ -32,8 +32,13 @@ public class ContactsBook implements NewInterface {
     }
 
     @Override
-    public void removeContact(Contact contact) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String removeContact(Contact contact) {
+        if (contactos.remove(contact)) {
+            return "Se removio el contacto";
+        } else {
+            return "No se encuentra el contacto en específico";
+        }
+
     }
 
     @Override
