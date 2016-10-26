@@ -71,7 +71,7 @@ public class ContactsBook implements NewInterface {
         int opc;
         do{
         ContactsBookUI.printMethodOptions();
-        opc = ContactsBookUI.ingreso_int();
+        opc = ContactsBookUI.ingresoInt();
         switch (opc) {
             case 1:
 

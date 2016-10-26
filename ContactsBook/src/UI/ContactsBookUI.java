@@ -13,9 +13,10 @@ import java.util.Scanner;
  *
  * @author johanr98 jsromerod@unal.edu.co
  */
+
 public class ContactsBookUI {
 
-    public static String ingreso_String() {
+    public static String ingresoString() {
         String entradaTeclado = "";
         Scanner entradaEscaner = new Scanner(System.in);
         entradaTeclado = entradaEscaner.nextLine();
@@ -25,14 +26,14 @@ public class ContactsBookUI {
     public static int ingresoInt() {
         int entradaTeclado;
         Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = entradaEscaner.nextInt();
+        entradaTeclado = Integer.parseInt(entradaEscaner.nextLine());
         return entradaTeclado;
     }
 
     public static long ingresoLong() {
         long entradaTeclado;
         Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = entradaEscaner.nextLong();
+        entradaTeclado = Long.parseLong(entradaEscaner.nextLine());;
         return entradaTeclado;
     }
 
@@ -50,7 +51,6 @@ public class ContactsBookUI {
 
     public static void printWelcome() {
         System.out.println(" LIBRETA DE CONTACTOS ");
-        System.out.println(" LIBRETA DE CONTACTOS ");
     }
     public static void printMethodOptions() {
         System.out.println("Seleccione una opcion: ");
@@ -60,10 +60,23 @@ public class ContactsBookUI {
         System.out.println("[4]- Visualizar todos los contactos");
         System.out.println("[5]- Visualizar un Contacto");
         System.out.println("[6]- Salir");
-        
-        
+    }
+    
+    public static void printMenuAtributos() {
+        System.out.println("Seleccione la opcion que desea editar: ");
+        System.out.println("[1]- Nombre");
+        System.out.println("[2]- Apellido");
+        System.out.println("[3]- Correos Electronicos");
+        System.out.println("[4]- Telefono fijo");
+        System.out.println("[5]- Telefono móvil");
+        System.out.println("[6]- Dirección");
+        System.out.println("¡¡ Para regresar al menu anterior ingrese [0] !!");
+    }
+    public static void printRepeat(){
         
     }
+    
+    
     
 
 }
