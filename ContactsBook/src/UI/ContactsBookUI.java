@@ -13,7 +13,6 @@ import java.util.Scanner;
  *
  * @author johanr98 jsromerod@unal.edu.co
  */
-
 public class ContactsBookUI {
 
     public static String ingresoString() {
@@ -52,6 +51,7 @@ public class ContactsBookUI {
     public static void printWelcome() {
         System.out.println(" LIBRETA DE CONTACTOS ");
     }
+
     public static void printMethodOptions() {
         System.out.println("Seleccione una opcion: ");
         System.out.println("[1]- Adicionar contacto");
@@ -61,7 +61,7 @@ public class ContactsBookUI {
         System.out.println("[5]- Visualizar un Contacto");
         System.out.println("[6]- Salir");
     }
-    
+
     public static int printMenuAtributos() {
         System.out.println("Seleccione la opcion que desea editar: ");
         System.out.println("[1]- Nombre");
@@ -71,14 +71,13 @@ public class ContactsBookUI {
         System.out.println("[5]- Telefono móvil");
         System.out.println("[6]- Dirección");
         System.out.println("¡¡ Para regresar al menu anterior ingrese [0] !!");
-        int a =ingresoInt();
+        int a = ingresoInt();
         return a;
     }
-    public static void printRepeat(){
-        
-    }
-    
-    
-    
 
+    public static void printRepeat() {
+        System.out.println("Ingrese 6 si quiere volver al menu o,"
+                + "ingrese cualquier otro numero para salir");
+
+    }
 }

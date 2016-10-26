@@ -13,9 +13,9 @@ import Data.Contact;
  */
 public interface NewInterface {
 
-    public abstract void addContact(Contact contact);
+    public abstract void addContact();
 
-    public abstract String removeContact(Contact contact);
+    public abstract String removeContact();
 
     public abstract void updateContact();
 
