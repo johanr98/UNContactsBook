@@ -17,7 +17,7 @@ public interface NewInterface {
 
     public abstract String removeContact(Contact contact);
 
-    public abstract void updatecontact(Contact contact);
+    public abstract void updatecontact();
 
     public abstract void printAllContacts();
 

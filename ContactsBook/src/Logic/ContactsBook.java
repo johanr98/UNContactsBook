@@ -59,7 +59,11 @@ public class ContactsBook implements NewInterface {
     }
 
     @Override
-    public void updatecontact(Contact contact) {
+    public void updatecontact() {
+
+        printContactsKeys();
+        ContactsBookUI.printMenuAtributos();
+        
 
     }
     
