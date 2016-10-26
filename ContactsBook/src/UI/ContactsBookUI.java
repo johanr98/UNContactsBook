@@ -9,6 +9,6 @@ package UI;
  *
  * @author johanr98 jsromerod@unal.edu.co
  */
-public class ConsoleUI {
+public class ContactsBookUI {
     
 }
