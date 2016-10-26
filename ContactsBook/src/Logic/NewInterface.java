@@ -17,10 +17,10 @@ public interface NewInterface {
 
     public abstract String removeContact(Contact contact);
 
-    public abstract void updatecontact();
+    public abstract void updateContact();
 
     public abstract void printAllContacts();
 
-    public abstract void printContactsKeys();
+    public abstract int printContactsKeys();
 
 }
