@@ -62,5 +62,10 @@ public class ContactsBook implements NewInterface {
     public void updatecontact(Contact contact) {
 
     }
-
+    
+    
+    public static void main(String args[]){
+        ContactsBookUI.printWelcome();
+        ContactsBookUI.printMethodOptions();
+    }
 }
