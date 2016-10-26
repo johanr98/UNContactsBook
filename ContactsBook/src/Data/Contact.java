@@ -18,6 +18,7 @@ public class Contact {
     private long telefonoMovil;
     private String direccion;
 
+    @Override
     public String toString() {
         return "Nombre : " + this.nombre + "\n"
                 + "Apellido : " + this.apellido + "\n"
