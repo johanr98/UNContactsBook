@@ -25,7 +25,7 @@ public class Contact {
                 + "Correos elecronicos : " + this.emailList() + "\n"
                 + "Telefono fijo : "+this.telefonoFijo+"\n"
                 + "Telefono movil : "+this.telefonoMovil+"\n"
-                + "Direccion : "+this.direccion;
+                + "Direccion : "+this.direccion+"\n";
     }
 
     public void setNombre(String nombre) {
