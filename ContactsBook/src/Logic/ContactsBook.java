@@ -6,7 +6,10 @@
 package Logic;
 
 import Data.*;
+import UI.ContactsBookUI;
 import java.util.ArrayList;
+import javax.sound.midi.SysexMessage;
+import java.util.Scanner;
 
 /**
  *
@@ -15,6 +18,12 @@ import java.util.ArrayList;
 public class ContactsBook implements NewInterface {
 
     private ArrayList<Contact> contactos;
+    private Scanner lector;
+
+    public ContactsBook(ArrayList<Contact> contactos) {
+        this.contactos = contactos;
+        lector = new Scanner(System.in);
+    }
 
     @Override
     public void addContact(Contact contact) {
@@ -23,12 +32,20 @@ public class ContactsBook implements NewInterface {
 
     @Override
     public void printAllContacts() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < contactos.size(); i++) {
+            ContactsBookUI.printContact(contactos.get(i));
+        }
     }
 
     @Override
     public void printContactsKeys() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        for (int i = 0; i < contactos.size(); i++) {
+            ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
+        }
+
+        ContactsBookUI.printContact(contactos.get(lector.nextInt() - 1));
+
     }
 
     @Override
@@ -43,7 +60,7 @@ public class ContactsBook implements NewInterface {
 
     @Override
     public void updatecontact(Contact contact) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }

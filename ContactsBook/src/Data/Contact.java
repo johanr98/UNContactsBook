@@ -23,9 +23,9 @@ public class Contact {
         return "Nombre : " + this.nombre + "\n"
                 + "Apellido : " + this.apellido + "\n"
                 + "Correos elecronicos : " + this.emailList() + "\n"
-                + "Telefono fijo : "+this.telefonoFijo+"\n"
-                + "Telefono movil : "+this.telefonoMovil+"\n"
-                + "Direccion : "+this.direccion;
+                + "Telefono fijo : " + this.telefonoFijo + "\n"
+                + "Telefono movil : " + this.telefonoMovil + "\n"
+                + "Direccion : " + this.direccion;
     }
 
     public void setNombre(String nombre) {
@@ -87,14 +87,14 @@ public class Contact {
         }
         return r;
     }
-    
-    public Contact(String nombre, String apellido, String[] correosElectronicos, int telefonoFijo, long telefonoMovil, String direccion ){
-        this.nombre= nombre;
-        this.apellido=apellido;
-        this.correosElectronicos=correosElectronicos;
-        this.telefonoFijo=telefonoFijo;
-        this.telefonoMovil=telefonoMovil;
-        this.direccion=direccion;
+
+    public Contact(String nombre, String apellido, String[] correosElectronicos, int telefonoFijo, long telefonoMovil, String direccion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correosElectronicos = correosElectronicos;
+        this.telefonoFijo = telefonoFijo;
+        this.telefonoMovil = telefonoMovil;
+        this.direccion = direccion;
     }
-    
+
 }
