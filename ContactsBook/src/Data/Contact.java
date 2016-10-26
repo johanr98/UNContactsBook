@@ -27,6 +27,54 @@ public class Contact {
                 + "Direccion : "+this.direccion;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCorreosElectronicos(String[] correosElectronicos) {
+        this.correosElectronicos = correosElectronicos;
+    }
+
+    public void setTelefonoFijo(int telefonoFijo) {
+        this.telefonoFijo = telefonoFijo;
+    }
+
+    public void setTelefonoMovil(long telefonoMovil) {
+        this.telefonoMovil = telefonoMovil;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String[] getCorreosElectronicos() {
+        return correosElectronicos;
+    }
+
+    public int getTelefonoFijo() {
+        return telefonoFijo;
+    }
+
+    public long getTelefonoMovil() {
+        return telefonoMovil;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
     private String emailList() {
         String r = "";
         for (int i = 0; i < correosElectronicos.length; i++) {
@@ -37,6 +85,15 @@ public class Contact {
             }
         }
         return r;
+    }
+    
+    public Contact(String nombre, String apellido, String[] correosElectronicos, int telefonoFijo, long telefonoMovil, String direccion ){
+        this.nombre= nombre;
+        this.apellido=apellido;
+        this.correosElectronicos=correosElectronicos;
+        this.telefonoFijo=telefonoFijo;
+        this.telefonoMovil=telefonoMovil;
+        this.direccion=direccion;
     }
     
 }
