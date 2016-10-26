@@ -23,9 +23,12 @@ public class Contact {
         return "Nombre : " + this.nombre + "\n"
                 + "Apellido : " + this.apellido + "\n"
                 + "Correos elecronicos : " + this.emailList() + "\n"
-                + "Telefono fijo : " + this.telefonoFijo + "\n"
-                + "Telefono movil : " + this.telefonoMovil + "\n"
-                + "Direccion : " + this.direccion;
+
+
+                + "Telefono fijo : "+this.telefonoFijo+"\n"
+                + "Telefono movil : "+this.telefonoMovil+"\n"
+                + "Direccion : "+this.direccion+"\n";
+
     }
 
     public void setNombre(String nombre) {
