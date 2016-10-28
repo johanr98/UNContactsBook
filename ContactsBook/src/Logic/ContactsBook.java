@@ -143,6 +143,7 @@ public class ContactsBook implements NewInterface {
         //Fin validación
         //Validación telefono movil
         ContactsBookUI.printString("Telefono Movil: ");
+        
         long telefonoMovil = ContactsBookUI.ingresoLong();
 
         while (true) {

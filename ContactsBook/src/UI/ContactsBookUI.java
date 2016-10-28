@@ -32,7 +32,7 @@ public class ContactsBookUI {
     public static long ingresoLong() {
         long entradaTeclado;
         Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = Long.parseLong(entradaEscaner.nextLine());;
+        entradaTeclado = Long.parseLong(entradaEscaner.nextLine());
         return entradaTeclado;
     }
 
