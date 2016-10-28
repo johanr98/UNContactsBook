@@ -404,21 +404,11 @@ public class ContactsBook implements NewInterface {
                 default:
                     ContactsBookUI.printString("Ingrese de nuevo su opción");
                     opc = 1;
-                    continue;
+                    break;
             }
-<<<<<<< HEAD
-            ContactsBookUI.printRepeat();;
-            opc = ContactsBookUI.ingresoInt();
-            if(opc != 6){
-                break;
-            }
-        } while (true);
-        
-=======
             ContactsBookUI.printRepeat();
 
         } while (opc == 6);
 
->>>>>>> origin/master
     }
 }
