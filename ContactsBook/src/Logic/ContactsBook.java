@@ -239,59 +239,123 @@ public class ContactsBook implements NewInterface {
             // MANEJO DE ERRORES DE ENTRADA
             case 1:
                 // se ingresa un string valido
-                contactos.get(x - 1).setNombre(lector.nextLine());
+                String nombre = ContactsBookUI.ingresoString();
+                while (true) {
+                    if (nombre.length() >= 3 && nombre.length() <= 10) {
+                        if (nombre.matches(".*\\d.*")) {
+                            ContactsBookUI.printString("Ingrese el nombre sin números!!");
+                            nombre = ContactsBookUI.ingresoString();
+                        } else {
+                            break;
+                        }
+                    } else {
+                        ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
+                                + "10!!");
+                    }
+
+                }
+
+                contactos.get(x - 1).setNombre(nombre);
                 break;
             case 2:
                 // se ingresa un string valido
-                contactos.get(x - 1).setApellido(lector.nextLine());
+                String apellido = ContactsBookUI.ingresoString();
+                while (true) {
+                    if (apellido.length() >= 3 && apellido.length() <= 10) {
+                        if (apellido.matches(".*\\d.*")) {
+                            ContactsBookUI.printString("Ingrese el apellido sin números!!");
+                            apellido = ContactsBookUI.ingresoString();
+                        } else {
+                            break;
+                        }
+
+                    } else {
+                        ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
+                                + "10!!");
+                    }
+                }
+
+                contactos.get(x - 1).setApellido(apellido);
                 break;
             case 3:
-                boolean b = true;
                 ArrayList<String> correos = new ArrayList();
                 ContactsBookUI.printString("Puede ingresar multiples correos"
                         + " electronicos, cuando desee terminar ingrese 0");
-                while (b) {
-                    String correo = lector.nextLine();
-                    if (correo == "0") {
-                        b = false;
-                    } else {
-                        correos.add(correo);
+
+                while (true) {
+                    String correo = ContactsBookUI.ingresoString();
+                    if (correo.equals("0")) {
+                        break;
                     }
+                    while (true) {
+                        if (correo.length() >= 11 && correo.length() <= 25) {
+                            if (correo.indexOf("@") == correo.lastIndexOf("@")
+                                    && correo.contains(".") && correo.indexOf("@") > -1) {
+
+                                correos.add(correo);
+                                ContactsBookUI.printString("Ingrese el siguiente correo!!");
+                                break;
+
+                            } else {
+                                ContactsBookUI.printString("El correo debe contener  "
+                                        + " un @ y al menos un punto (.) ");
+                                correo = ContactsBookUI.ingresoString();
+                            }
+
+                        } else {
+                            ContactsBookUI.printString("El valor minimo son 11 letras y máximo "
+                                    + "25!!");
+                            correo = ContactsBookUI.ingresoString();
+                        }
+                    }
+
                 }
                 String[] a = new String[correos.size()];
                 contactos.get(x - 1).setCorreosElectronicos(correos.toArray(a));
                 break;
             case 4:
 
-                try {
-                    contactos.get(x - 1).setTelefonoFijo(ContactsBookUI.ingresoInt());
-                    ContactsBookUI.printString("Operación exitosa!!");
-                } catch (Exception e) {
-                    ContactsBookUI.printString("Error, por favor ingrese de nuevo"
-                            + " el valor");
-                    //REPETIR
+                int telefonoFijo = ContactsBookUI.ingresoInt();
+                while (true) {
+                    if (telefonoFijo >= 1000000 && telefonoFijo <= 10000000) {
+                        break;
+                    } else {
+                        ContactsBookUI.printString("El número debe tener 7 digitos!");
+                        telefonoFijo = ContactsBookUI.ingresoInt();
+                    }
                 }
-
+                contactos.get(x - 1).setTelefonoFijo(telefonoFijo);
                 break;
             case 5:
-                try {
-                    contactos.get(x - 1).setTelefonoMovil(ContactsBookUI.ingresoLong());
-                    ContactsBookUI.printString("Operación exitosa!!");
-                } catch (Exception e) {
-                    ContactsBookUI.printString("Error, por favor ingrese de nuevo"
-                            + " el valor");
-                    //REPETIR
+
+                long telefonoMovil = ContactsBookUI.ingresoLong();
+                while (true) {
+                    if (telefonoMovil >= 1000000000 && telefonoMovil < 10000000000l) {
+                        ContactsBookUI.printString("El número debe tener 7 digitos!");
+                        telefonoMovil = ContactsBookUI.ingresoLong();
+                    } else {
+                        break;
+                    }
                 }
+                contactos.get(x - 1).setTelefonoMovil(telefonoMovil);
                 break;
             case 6:
-                try {
-                    contactos.get(x - 1).setDireccion(ContactsBookUI.ingresoString());
-                    ContactsBookUI.printString("Operación exitosa!!");
-                } catch (Exception e) {
-                    ContactsBookUI.printString("Error, por favor ingrese de nuevo"
-                            + " el valor");
-                    //REPETIR
+                
+                String direccion = ContactsBookUI.ingresoString();
+                while (true) {
+                    if (direccion.length() >= 10 && direccion.length() <= 30) {
+
+                        ContactsBookUI.printString("Ingrese el apellido sin números!!");
+                        direccion = ContactsBookUI.ingresoString();
+
+                        break;
+
+                    } else {
+                        ContactsBookUI.printString("El valor minimo son 10 letras y máximo "
+                                + "30!!");
+                    }
                 }
+                contactos.get(x - 1).setDireccion(direccion);
                 break;
             default:
                 ContactsBookUI.printString("Error, por favor ingrese de nuevo"
