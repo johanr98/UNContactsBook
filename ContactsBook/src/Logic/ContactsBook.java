@@ -48,40 +48,87 @@ public class ContactsBook implements NewInterface {
     public void addContact() {
         ContactsBookUI.printString("Ingrese los valores del nuevo Contacto");
         ContactsBookUI.printString("Nombre: ");
-        
+        //validación nombre
         String nombre = ContactsBookUI.ingresoString();
+        while (true) {
+            if (nombre.length() >= 3 && nombre.length() <= 10) {
+                if (nombre.matches(".*\\d.*")) {
+                    ContactsBookUI.printString("Ingrese el nombre sin números!!");
+                } else {
+                    break;
+                }
+            } else {
+                ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
+                        + "10!!");
+            }
+
+        }
+        //fin validación nombre
         ContactsBookUI.printString("Apellido: ");
         String apellido = ContactsBookUI.ingresoString();
+        //validación apellido
+        while (true) {
+            if (apellido.length() >= 3 && apellido.length() <= 10) {
+                if (apellido.matches(".*\\d.*")) {
+                    ContactsBookUI.printString("Ingrese el apellido sin números!!");
+                } else {
+                    break;
+                }
+
+            } else {
+                ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
+                        + "10!!");
+            }
+        }
+
         ContactsBookUI.printString("Correos: ");
-        //Correos
-
-        boolean b = true; // Verificador de ingreso correcto
-
+        //validación correos
         ArrayList<String> correos = new ArrayList();
         ContactsBookUI.printString("Puede ingresar multiples correos"
                 + " electronicos, cuando desee terminar ingrese 0");
-        while (b) {
-            String correo = lector.nextLine();
+
+        while (true) {
+            String correo = ContactsBookUI.ingresoString();
+            firstLoop:
             if (correo.equals("0")) {
-                b = false;
-            } else {
-                correos.add(correo);
+                break;
             }
+            while (true) {
+                if (correo.length() >= 11 && correo.length() <= 25) {
+                    if (correo.indexOf("@") == correo.lastIndexOf("@")
+                            && correo.contains(".") && correo.indexOf("@") > -1) {
+
+                        correos.add(correo);
+                        break;
+
+                    } else {
+                        ContactsBookUI.printString("El correo debe contener  "
+                                + " un @ y al menos un punto (.) ");
+                    }
+
+                } else {
+                    ContactsBookUI.printString("El valor minimo son 11 letras y máximo "
+                            + "25!!");
+                }
+            }
+
         }
+
         String[] correo = new String[correos.size()];
         correos.toArray(correo);
         //fin entrada de correos electrónicos 
         ContactsBookUI.printString("Telefono Fijo: ");
         int telefonoFijo = ContactsBookUI.ingresoInt();
-        
+
         ContactsBookUI.printString("Telefono Movil: ");
         long telefonoMovil = ContactsBookUI.ingresoLong();
-        
+
         ContactsBookUI.printString("Direccion: ");
         String direccion = ContactsBookUI.ingresoString();
         // Manejo de errores
+
         try {
-            
+
             Contact contact = new Contact(nombre, apellido, correo, telefonoFijo,
                     telefonoMovil, direccion);
             contactos.add(contact);
@@ -91,9 +138,9 @@ public class ContactsBook implements NewInterface {
                     + " del contacto");
             addContact();
         }
-        
+
     }
-    
+
     @Override
     public void printAllContacts() {
         try {
@@ -104,12 +151,12 @@ public class ContactsBook implements NewInterface {
             ContactsBookUI.printString("No se han añadido contactos!!, por favor"
                     + " agregue uno antes de ingresar a esta opción");
         }
-        
+
     }
-    
+
     @Override
     public int printContactsKeys() {
-        
+
         for (int i = 0; i < contactos.size(); i++) {
             ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
         }
@@ -118,7 +165,7 @@ public class ContactsBook implements NewInterface {
         ContactsBookUI.printContact(contactos.get(x - 1));
         return x;
     }
-    
+
     @Override
     public void removeContact() {
         ContactsBookUI.printString("Que contactto desea remover");
@@ -136,13 +183,13 @@ public class ContactsBook implements NewInterface {
             }
         } while (x);
     }
-    
+
     @Override
     public void updateContact() {
-        
+
         int x = printContactsKeys();
         int y = ContactsBookUI.printMenuAtributos();
-        
+
         switch (y) {
 
             // MANEJO DE ERRORES DE ENTRADA
@@ -174,7 +221,7 @@ public class ContactsBook implements NewInterface {
                 contactos.get(x - 1).setCorreosElectronicos(correos.toArray(a));
                 break;
             case 4:
-                
+
                 try {
                     contactos.get(x - 1).setTelefonoFijo(ContactsBookUI.ingresoInt());
                     ContactsBookUI.printString("Operación exitosa!!");
@@ -183,7 +230,7 @@ public class ContactsBook implements NewInterface {
                             + " el valor");
                     //REPETIR
                 }
-                
+
                 break;
             case 5:
                 try {
@@ -212,7 +259,7 @@ public class ContactsBook implements NewInterface {
                 break;
         }
     }
-    
+
     public static void main(String[] args) {
         ContactsBook contactsBook = new ContactsBook();
         int opc;
@@ -245,8 +292,8 @@ public class ContactsBook implements NewInterface {
             }
             ContactsBookUI.printRepeat();;
             opc = ContactsBookUI.ingresoInt();
-            
+
         } while (opc == 6);
-        
+
     }
 }
