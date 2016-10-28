@@ -210,7 +210,7 @@ public class ContactsBook implements NewInterface {
                 ContactsBookUI.printString((i + 1) + ". " + contactos.get(i).getNombre() + "\n");
             }
             //por si las moscas
-            
+
             ContactsBookUI.printString("Que contacto desea ver?");
             int x = Integer.parseInt(ContactsBookUI.ingresoString());
             ContactsBookUI.printContact(contactos.get(x - 1));
@@ -220,31 +220,42 @@ public class ContactsBook implements NewInterface {
 
     @Override
     public void removeContact() {
-        ContactsBookUI.printString("Que contacto desea remover");
+
         if (contactos.size() == 0) {
             ContactsBookUI.printString("Todavía no existe ningún contacto");
         } else {
 
             for (int i = 0; i < contactos.size(); i++) {
-                ContactsBookUI.printString((i) + ". " + contactos.get(i).getNombre() + "\n");
+                ContactsBookUI.printString((i + 1) + ". " + contactos.get(i).getNombre() + "\n");
             }
-            int y = ContactsBookUI.ingresoInt();
-            boolean x = true; // verificador
-            do {
+
+            ContactsBookUI.printString("Que contacto desea remover");
+            int y = ContactsBookUI.ingresoInt(); // identificador contacto
+
+            while (true) {
                 try {
                     contactos.remove(y);
-                    x = false;
+                    ContactsBookUI.printString("Exito removiendo contacto");
+                    break;
                 } catch (IndexOutOfBoundsException e) {
                     ContactsBookUI.printString("Ingrese un número valido!");
                     y = ContactsBookUI.ingresoInt();
-                    break;
-                }
-            } while (true);
-        }
-    }
 
-    @Override
-    public void updateContact() {
+                }
+            }
+
+        }
+        /*
+
+            boolean x = true; // verificador
+            do {
+                
+        }*/
+    }
+}
+
+@Override
+        public void updateContact() {
 
         if (contactos.size() == 0) {
             ContactsBookUI.printString("No existen contactos aún");
