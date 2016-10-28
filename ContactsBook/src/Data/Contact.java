@@ -20,14 +20,14 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Nombre : " + this.nombre + "\n"
-                + "Apellido : " + this.apellido + "\n"
-                + "Correos elecronicos : " + this.emailList() + "\n"
+        return "Nombre: " + this.nombre + "\n"
+                + "Apellido: " + this.apellido + "\n"
+                + "Correos Elecronicos: " + this.emailList() + "\n"
 
 
-                + "Telefono fijo : "+this.telefonoFijo+"\n"
-                + "Telefono movil : "+this.telefonoMovil+"\n"
-                + "Direccion : "+this.direccion+"\n";
+                + "Telefono Fijo: "+this.telefonoFijo+"\n"
+                + "Telefono Movil: "+this.telefonoMovil+"\n"
+                + "Direccion: "+this.direccion+"\n";
 
     }
 
