@@ -54,30 +54,30 @@ public class ContactsBookUI {
 
     public static void printMethodOptions() {
         System.out.println("Seleccione una opcion: ");
-        System.out.println("[1]- Adicionar contacto");
-        System.out.println("[2]- Eliminar contacto");
-        System.out.println("[3]- Actualizar contacto");
-        System.out.println("[4]- Visualizar todos los contactos");
-        System.out.println("[5]- Visualizar un Contacto");
-        System.out.println("[6]- Salir");
+        System.out.println("[1]- Adicionar contacto.");
+        System.out.println("[2]- Eliminar contacto.");
+        System.out.println("[3]- Actualizar contacto.");
+        System.out.println("[4]- Visualizar todos los contactos.");
+        System.out.println("[5]- Visualizar un contacto.");
+        System.out.println("[6]- Salir.");
     }
 
     public static int printMenuAtributos() {
         System.out.println("Seleccione la opcion que desea editar: ");
-        System.out.println("[1]- Nombre");
-        System.out.println("[2]- Apellido");
-        System.out.println("[3]- Correos Electronicos");
-        System.out.println("[4]- Telefono fijo");
-        System.out.println("[5]- Telefono móvil");
-        System.out.println("[6]- Dirección");
+        System.out.println("[1]- Nombre.");
+        System.out.println("[2]- Apellido.");
+        System.out.println("[3]- Correos Electronicos.");
+        System.out.println("[4]- Telefono fijo.");
+        System.out.println("[5]- Telefono móvil.");
+        System.out.println("[6]- Dirección.");
         System.out.println("¡¡ Para regresar al menu anterior ingrese [0] !!");
         int a = ingresoInt();
         return a;
     }
 
     public static void printRepeat() {
-        System.out.println("Ingrese 6 si quiere volver al menu o,"
-                + "ingrese cualquier otro numero para salir");
+        System.out.println("Ingrese 6 si quiere volver al menu, o"
+                + "ingrese cualquier otro numero para salir.");
 
     }
 }
