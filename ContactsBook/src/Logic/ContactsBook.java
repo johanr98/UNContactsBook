@@ -215,7 +215,7 @@ public class ContactsBook implements NewInterface {
 
     @Override
     public void removeContact() {
-        ContactsBookUI.printString("Que contactto desea remover");
+        ContactsBookUI.printString("Que contacto desea remover");
         if (contactos.size() == 0) {
             ContactsBookUI.printString("Todavía no existe ningún contacto");
         } else {
@@ -250,10 +250,6 @@ public class ContactsBook implements NewInterface {
 
             switch (y) {
 
-                // MANEJO DE ERRORES DE ENTRADA
-                // MANEJO DE ERRORES DE ENTRADA
-                // MANEJO DE ERRORES DE ENTRADA
-                // MANEJO DE ERRORES DE ENTRADA
                 case 1:
                     // se ingresa un string valido
                     String nombre = ContactsBookUI.ingresoString();
@@ -418,8 +414,8 @@ public class ContactsBook implements NewInterface {
                     continue;
             }
             ContactsBookUI.printRepeat();
-            ContactsBookUI.ingresoInt();
-            if(opc == 6){
+
+            if (opc == 6) {
                 break;
             }
 
