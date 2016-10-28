@@ -147,10 +147,11 @@ public class ContactsBook implements NewInterface {
 
         while (true) {
             if (telefonoMovil >= 1000000000 && telefonoMovil < 10000000000l) {
+                break;
+            } else {
                 ContactsBookUI.printString("El número debe tener 10 digitos!");
                 telefonoMovil = ContactsBookUI.ingresoLong();
-            } else {
-                break;
+
             }
         }
 
