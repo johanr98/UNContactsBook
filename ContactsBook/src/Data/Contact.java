@@ -22,9 +22,7 @@ public class Contact {
     public String toString() {
         return "Nombre: " + this.nombre + "\n"
                 + "Apellido: " + this.apellido + "\n"
-                + "Correos Elecronicos: " + this.emailList() + "\n"
-
-
+                + "Correos Electronicos: " + this.emailList() + "\n"
                 + "Telefono Fijo: "+this.telefonoFijo+"\n"
                 + "Telefono Movil: "+this.telefonoMovil+"\n"
                 + "Direccion: "+this.direccion+"\n";
@@ -82,12 +80,10 @@ public class Contact {
     private String emailList() {
         String r = "";
         for (int i = 0; i < correosElectronicos.length; i++) {
-            if (i == correosElectronicos.length - 2) {
-                r += correosElectronicos[i];
-            } else {
-                r += correosElectronicos[i] + ", ";
-            }
+            r += correosElectronicos[i] + ", ";
         }
+        r.trim();
+        r=r.substring(0, r.length()-2);
         return r;
     }
 
