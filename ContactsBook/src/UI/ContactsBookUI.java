@@ -17,22 +17,33 @@ public class ContactsBookUI {
     public static String ingresoString() {
         String entradaTeclado = "";
         Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = entradaEscaner.nextLine();
+        try {
+            entradaTeclado = entradaEscaner.nextLine();
+        } catch (Exception e) {
+            ingresoString();
+        }
         return entradaTeclado;
     }
 
     public static int ingresoInt() {
-        int entradaTeclado;
-        Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = Integer.parseInt(entradaEscaner.nextLine());
-        return entradaTeclado;
+        int r=0;
+        try {
+            r=Integer.parseInt(ingresoString());
+        } catch (Exception e) {
+            ingresoInt();
+        }
+        return r;
     }
 
     public static long ingresoLong() {
-        long entradaTeclado;
-        Scanner entradaEscaner = new Scanner(System.in);
-        entradaTeclado = Long.parseLong(entradaEscaner.nextLine());
-        return entradaTeclado;
+        long r=0;
+        
+        try {
+            r=Long.parseLong(ingresoString());
+        } catch (Exception e) {
+            ingresoInt();
+        }
+        return r;
     }
 
     public static void printString(String a) {
