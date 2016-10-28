@@ -400,6 +400,7 @@ public class ContactsBook implements NewInterface {
 
     public static void main(String[] args) {
         ContactsBook contactsBook = new ContactsBook();
+        contactsBook.iniciarcontactos();
         int opc;
         do {
             ContactsBookUI.printMethodOptions();
@@ -436,5 +437,13 @@ public class ContactsBook implements NewInterface {
 
         } while (true);
 
+    }
+    
+    
+    void iniciarcontactos(){
+        String[] xD =  {"jsromerod@unal.edu.co","josebasd@gmail.com"} ;
+        contactos.add(new Contact("johan1", "romero1", xD, 3010115, 301772292, "adwhawdfawfwfa11"));
+        contactos.add(new Contact("johan2", "romero2", xD, 3020115, 302772292, "adwhawdfawfwfa22"));
+        contactos.add(new Contact("johan3", "romero3", xD, 3030115, 303772292, "adwhawdfawfwfa33"));
     }
 }
