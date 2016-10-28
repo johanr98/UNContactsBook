@@ -98,7 +98,6 @@ public class ContactsBook implements NewInterface {
                 } else {
                     ContactsBookUI.printString("Ingrese al menos un correo!");
                 }
-
             }
             while (true) {
                 if (correo.length() >= 11 && correo.length() <= 25) {
@@ -147,7 +146,7 @@ public class ContactsBook implements NewInterface {
 
         while (true) {
             if (telefonoMovil >= 1000000000 && telefonoMovil < 10000000000l) {
-                ContactsBookUI.printString("El número debe tener 7 digitos!");
+                ContactsBookUI.printString("El número debe tener 10 digitos!");
                 telefonoMovil = ContactsBookUI.ingresoLong();
             } else {
                 break;
@@ -160,12 +159,7 @@ public class ContactsBook implements NewInterface {
         // validacion direccion
         while (true) {
             if (direccion.length() >= 10 && direccion.length() <= 30) {
-
-                ContactsBookUI.printString("Ingrese minimo 10 letras, y maximo 30");
-                direccion = ContactsBookUI.ingresoString();
-
                 break;
-
             } else {
                 ContactsBookUI.printString("El valor minimo son 10 letras y máximo "
                         + "30!!");
@@ -257,7 +251,6 @@ public class ContactsBook implements NewInterface {
                     } else {
                         ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
                                 + "10!!");
-                        nombre = ContactsBookUI.ingresoString();
                     }
 
                 }
@@ -292,11 +285,7 @@ public class ContactsBook implements NewInterface {
                 while (true) {
                     String correo = ContactsBookUI.ingresoString();
                     if (correo.equals("0")) {
-                        if (correos.size() >= 1) {
-                            break;
-                        } else {
-                            ContactsBookUI.printString("Ingrese al menos un correo!");
-                        }
+                        break;
                     }
                     while (true) {
                         if (correo.length() >= 11 && correo.length() <= 25) {
@@ -342,7 +331,7 @@ public class ContactsBook implements NewInterface {
                 long telefonoMovil = ContactsBookUI.ingresoLong();
                 while (true) {
                     if (telefonoMovil >= 1000000000 && telefonoMovil < 10000000000l) {
-                        ContactsBookUI.printString("El número debe tener 10 digitos!");
+                        ContactsBookUI.printString("El número debe tener 7 digitos!");
                         telefonoMovil = ContactsBookUI.ingresoLong();
                     } else {
                         break;
@@ -355,10 +344,6 @@ public class ContactsBook implements NewInterface {
                 String direccion = ContactsBookUI.ingresoString();
                 while (true) {
                     if (direccion.length() >= 10 && direccion.length() <= 30) {
-
-                        ContactsBookUI.printString("Ingrese el apellido sin números!!");
-                        direccion = ContactsBookUI.ingresoString();
-
                         break;
 
                     } else {
@@ -404,21 +389,11 @@ public class ContactsBook implements NewInterface {
                 default:
                     ContactsBookUI.printString("Ingrese de nuevo su opción");
                     opc = 1;
-                    continue;
+                    break;
             }
-<<<<<<< HEAD
-            ContactsBookUI.printRepeat();;
-            opc = ContactsBookUI.ingresoInt();
-            if(opc != 6){
-                break;
-            }
-        } while (true);
-        
-=======
             ContactsBookUI.printRepeat();
 
         } while (opc == 6);
 
->>>>>>> origin/master
     }
 }
