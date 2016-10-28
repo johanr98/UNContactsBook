@@ -81,6 +81,7 @@ public class ContactsBook implements NewInterface {
             } else {
                 ContactsBookUI.printString("El valor minimo son 3 letras y máximo "
                         + "10!!");
+                apellido = ContactsBookUI.ingresoString();
             }
         }
 
