@@ -213,19 +213,26 @@ public class ContactsBook implements NewInterface {
     @Override
     public void removeContact() {
         ContactsBookUI.printString("Que contactto desea remover");
-        for (int i = 0; i < contactos.size(); i++) {
-            ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
-        }
-        int y = ContactsBookUI.ingresoInt();
-        boolean x = true; // verificador
-        do {
-            try {
-                contactos.remove(y - 1);
-                x = false;
-            } catch (IndexOutOfBoundsException e) {
-                ContactsBookUI.printString("Ingrese un número valido!");
+        if (contactos.size() == 0) {
+            ContactsBookUI.printString("Todavía no existe ningún contacto");
+        } else {
+
+            for (int i = 0; i < contactos.size(); i++) {
+                ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
             }
-        } while (x);
+            int y = ContactsBookUI.ingresoInt();
+            boolean x = true; // verificador
+            do {
+                try {
+                    contactos.remove(y - 1);
+                    x = false;
+                } catch (IndexOutOfBoundsException e) {
+                    ContactsBookUI.printString("Ingrese un número valido!");
+                    y = ContactsBookUI.ingresoInt();
+                    break;
+                }
+            } while (true);
+        }
     }
 
     @Override
