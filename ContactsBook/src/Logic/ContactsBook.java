@@ -207,11 +207,12 @@ public class ContactsBook implements NewInterface {
         } else {
 
             for (int i = 0; i < contactos.size(); i++) {
-                ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
+                ContactsBookUI.printString((i + 1) + ". " + contactos.get(i).getNombre() + "\n");
             }
             //por si las moscas
-            int x = Integer.parseInt(ContactsBookUI.ingresoString());
+            
             ContactsBookUI.printString("Que contacto desea ver?");
+            int x = Integer.parseInt(ContactsBookUI.ingresoString());
             ContactsBookUI.printContact(contactos.get(x - 1));
             return x;
         }
