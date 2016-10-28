@@ -213,7 +213,15 @@ public class ContactsBook implements NewInterface {
 
             ContactsBookUI.printString("Que contacto desea ver?");
             int x = Integer.parseInt(ContactsBookUI.ingresoString());
-            ContactsBookUI.printContact(contactos.get(x - 1));
+            while (true) {
+
+                try {
+                    ContactsBookUI.printContact(contactos.get(x - 1));
+                    break;
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    ContactsBookUI.printString("Ingrese un valor valido");
+                }
+            }
             return x;
         }
     }
@@ -234,7 +242,7 @@ public class ContactsBook implements NewInterface {
 
             while (true) {
                 try {
-                    contactos.remove(y-1);
+                    contactos.remove(y - 1);
                     ContactsBookUI.printString("Exito removiendo contacto");
                     break;
                 } catch (IndexOutOfBoundsException e) {
@@ -350,12 +358,21 @@ public class ContactsBook implements NewInterface {
 
                         int telefonoFijo = ContactsBookUI.ingresoInt();
                         while (true) {
-                            if (telefonoFijo >= 1000000 && telefonoFijo <= 10000000) {
-                                break;
-                            } else {
-                                ContactsBookUI.printString("El número debe tener 7 digitos!");
+                            try {
+
+                                if (telefonoFijo >= 1000000 && telefonoFijo <= 10000000) {
+                                    break;
+                                } else {
+                                    ContactsBookUI.printString("El número debe tener 7 digitos!");
+                                    telefonoFijo = ContactsBookUI.ingresoInt();
+                                }
+
+                            } catch (NumberFormatException e) {
+                                ContactsBookUI.printString("Ingrese un número dentro"
+                                        + " de los limites (7)");
                                 telefonoFijo = ContactsBookUI.ingresoInt();
                             }
+
                         }
                         contactos.get(x - 1).setTelefonoFijo(telefonoFijo);
                         break;
@@ -438,10 +455,9 @@ public class ContactsBook implements NewInterface {
         } while (true);
 
     }
-    
-    
-    void iniciarcontactos(){
-        String[] xD =  {"jsromerod@unal.edu.co","josebasd@gmail.com"} ;
+
+    void iniciarcontactos() {
+        String[] xD = {"jsromerod@unal.edu.co", "josebasd@gmail.com"};
         contactos.add(new Contact("johan1", "romero1", xD, 3010115, 301772292, "adwhawdfawfwfa11"));
         contactos.add(new Contact("johan2", "romero2", xD, 3020115, 302772292, "adwhawdfawfwfa22"));
         contactos.add(new Contact("johan3", "romero3", xD, 3030115, 303772292, "adwhawdfawfwfa33"));
