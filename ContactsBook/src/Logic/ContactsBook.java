@@ -165,6 +165,7 @@ public class ContactsBook implements NewInterface {
             } else {
                 ContactsBookUI.printString("El valor minimo son 10 letras y máximo "
                         + "30!!");
+                direccion = ContactsBookUI.ingresoString();
             }
         }
 
@@ -411,7 +412,7 @@ public class ContactsBook implements NewInterface {
             }
             ContactsBookUI.printRepeat();
 
-        } while (opc == 6);
+        } while (true);
 
     }
 }

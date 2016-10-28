@@ -76,8 +76,8 @@ public class ContactsBookUI {
     }
 
     public static void printRepeat() {
-        System.out.println("Ingrese 6 si quiere volver al menu, o"
-                + "ingrese cualquier otro numero para salir.");
+        System.out.println("De vuelta al menu");
+        System.out.println("------------------------------");
         printMethodOptions();
 
     }
