@@ -184,15 +184,19 @@ public class ContactsBook implements NewInterface {
 
     @Override
     public void printAllContacts() {
-        try {
-            for (int i = 0; i < contactos.size(); i++) {
-                ContactsBookUI.printContact(contactos.get(i));
-            }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            ContactsBookUI.printString("No se han añadido contactos!!, por favor"
-                    + " agregue uno antes de ingresar a esta opción");
-        }
+        if (contactos.size() == 0) {
+            ContactsBookUI.printString("No existen contactos aún");
+        } else {
 
+            try {
+                for (int i = 0; i < contactos.size(); i++) {
+                    ContactsBookUI.printContact(contactos.get(i));
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                ContactsBookUI.printString("No se han añadido contactos!!, por favor"
+                        + " agregue uno antes de ingresar a esta opción");
+            }
+        }
     }
 
     @Override
