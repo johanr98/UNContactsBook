@@ -7,10 +7,7 @@ package Logic;
 
 import Data.*;
 import UI.ContactsBookUI;
-import com.sun.org.apache.bcel.internal.generic.GOTO;
 import java.util.ArrayList;
-import javax.sound.midi.SysexMessage;
-import java.util.Scanner;
 
 /**
  *
@@ -408,9 +405,13 @@ public class ContactsBook implements NewInterface {
                 default:
                     ContactsBookUI.printString("Ingrese de nuevo su opción");
                     opc = 1;
-                    break;
+                    continue;
             }
             ContactsBookUI.printRepeat();
+            ContactsBookUI.ingresoInt();
+            if(opc == 6){
+                break;
+            }
 
         } while (true);
 
