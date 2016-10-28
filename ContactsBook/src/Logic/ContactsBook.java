@@ -234,7 +234,7 @@ public class ContactsBook implements NewInterface {
 
             while (true) {
                 try {
-                    contactos.remove(y);
+                    contactos.remove(y-1);
                     ContactsBookUI.printString("Exito removiendo contacto");
                     break;
                 } catch (IndexOutOfBoundsException e) {
