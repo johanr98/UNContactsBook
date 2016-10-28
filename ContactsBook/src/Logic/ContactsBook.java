@@ -22,7 +22,6 @@ public class ContactsBook implements NewInterface {
      *
      */
     private ArrayList<Contact> contactos;
-    private Scanner lector;
 
     /**
      * Constructor con parametros de la clase
@@ -31,14 +30,14 @@ public class ContactsBook implements NewInterface {
      */
     public ContactsBook(ArrayList<Contact> contactos) {
         this.contactos = contactos;
-        lector = new Scanner(System.in);
+
     }
 
     /**
      * Constructor por defecto de la clase
      */
     private ContactsBook() {
-        lector = new Scanner(System.in);
+        contactos = new ArrayList<>();
     }
 
     /**
@@ -217,7 +216,7 @@ public class ContactsBook implements NewInterface {
         for (int i = 0; i < contactos.size(); i++) {
             ContactsBookUI.printString((i + 1) + contactos.get(i).getNombre() + "\n");
         }
-        int y = Integer.parseInt(lector.nextLine());
+        int y = ContactsBookUI.ingresoInt();
         boolean x = true; // verificador
         do {
             try {
