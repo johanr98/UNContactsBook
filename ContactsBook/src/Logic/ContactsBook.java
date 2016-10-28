@@ -245,17 +245,11 @@ public class ContactsBook implements NewInterface {
             }
 
         }
-        /*
-
-            boolean x = true; // verificador
-            do {
-                
-        }*/
+//alñsdkfjasklñdf
     }
-}
 
-@Override
-        public void updateContact() {
+    @Override
+    public void updateContact() {
 
         if (contactos.size() == 0) {
             ContactsBookUI.printString("No existen contactos aún");
