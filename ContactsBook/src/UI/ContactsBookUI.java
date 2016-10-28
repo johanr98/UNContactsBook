@@ -77,7 +77,6 @@ public class ContactsBookUI {
     public static void printRepeat() {
         System.out.println("De vuelta al menu");
         System.out.println("------------------------------");
-        printMethodOptions();
 
     }
 }
