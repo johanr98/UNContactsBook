@@ -37,6 +37,7 @@ public class ContactsBookUI {
 
     public static long ingresoLong() {
         long r=0;
+        
         try {
             r=Long.parseLong(ingresoString());
         } catch (Exception e) {
