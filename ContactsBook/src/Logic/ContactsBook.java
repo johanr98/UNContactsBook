@@ -221,13 +221,13 @@ public class ContactsBook implements NewInterface {
         } else {
 
             for (int i = 0; i < contactos.size(); i++) {
-                ContactsBookUI.printString((i + 1) + ". " + contactos.get(i).getNombre() + "\n");
+                ContactsBookUI.printString((i) + ". " + contactos.get(i).getNombre() + "\n");
             }
             int y = ContactsBookUI.ingresoInt();
             boolean x = true; // verificador
             do {
                 try {
-                    contactos.remove(y - 2);
+                    contactos.remove(y);
                     x = false;
                 } catch (IndexOutOfBoundsException e) {
                     ContactsBookUI.printString("Ingrese un número valido!");
