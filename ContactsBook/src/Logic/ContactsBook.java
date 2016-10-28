@@ -417,7 +417,6 @@ public class ContactsBook implements NewInterface {
 
     public static void main(String[] args) {
         ContactsBook contactsBook = new ContactsBook();
-        contactsBook.iniciarcontactos();
         int opc;
         do {
             ContactsBookUI.printMethodOptions();
