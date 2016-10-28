@@ -13,55 +13,58 @@ import java.util.Scanner;
  * @author johanr98 jsromerod@unal.edu.co
  */
 public class ContactsBookUI {
-
+    
     public static String ingresoString() {
         String entradaTeclado = "";
         Scanner entradaEscaner = new Scanner(System.in);
         try {
             entradaTeclado = entradaEscaner.nextLine();
         } catch (Exception e) {
+            printString("Ingrese bien la linea");
             ingresoString();
         }
         return entradaTeclado;
     }
-
+    
     public static int ingresoInt() {
-        int r=0;
+        int r = 0;
         try {
-            r=Integer.parseInt(ingresoString());
+            r = Integer.parseInt(ingresoString());
         } catch (Exception e) {
+            printString("Ingrese bien la linea");
             ingresoInt();
         }
         return r;
     }
-
+    
     public static long ingresoLong() {
-        long r=0;
+        long r = 0;
         
         try {
-            r=Long.parseLong(ingresoString());
+            r = Long.parseLong(ingresoString());
         } catch (Exception e) {
+            printString("Ingrese bien la linea");
             ingresoInt();
         }
         return r;
     }
-
+    
     public static void printString(String a) {
         System.out.println(a);
     }
-
+    
     public static void printContact(Contact a) {
         System.out.println(a);
     }
-
+    
     public static void printInfoAddContact() {
         System.out.println("Adicione el nuevo contacto: ");
     }
-
+    
     public static void printWelcome() {
         System.out.println(" LIBRETA DE CONTACTOS ");
     }
-
+    
     public static void printMethodOptions() {
         System.out.println("Seleccione una opcion: ");
         System.out.println("[1]- Adicionar contacto.");
@@ -71,7 +74,7 @@ public class ContactsBookUI {
         System.out.println("[5]- Visualizar un contacto.");
         System.out.println("[6]- Salir.");
     }
-
+    
     public static int printMenuAtributos() {
         System.out.println("Seleccione la opcion que desea editar: ");
         System.out.println("[1]- Nombre.");
@@ -84,10 +87,10 @@ public class ContactsBookUI {
         int a = ingresoInt();
         return a;
     }
-
+    
     public static void printRepeat() {
         System.out.println("De vuelta al menu");
         System.out.println("------------------------------");
-
+        
     }
 }
