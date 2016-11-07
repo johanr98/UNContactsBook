@@ -86,7 +86,7 @@ public class Contact {
         r=r.substring(0, r.length()-2);
         return r;
     }
-
+    //constructor de la clase Contact
     public Contact(String nombre, String apellido, String[] correosElectronicos, int telefonoFijo, long telefonoMovil, String direccion) {
         this.nombre = nombre;
         this.apellido = apellido;
