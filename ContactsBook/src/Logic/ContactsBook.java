@@ -34,7 +34,7 @@ public class ContactsBook implements NewInterface {
     /**
      * Constructor por defecto de la clase
      */
-    private ContactsBook() {
+    public ContactsBook() {
         contactos = new ArrayList<>();
     }
 
@@ -419,10 +419,10 @@ public class ContactsBook implements NewInterface {
     public static void main(String[] args) {
         ContactsBook contactsBook = new ContactsBook();
         JFrame a = new ContactsBookGUI();
-        a.setVisible(true);
         int opc;
         do {
             ContactsBookUI.printMethodOptions();
+            a.setVisible(true);
             opc = ContactsBookUI.ingresoInt();
             switch (opc) {
                 case 1:

@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/macas/Documents/GitHub/UNContactsBook/ContactsBook/src/Logic/AddContact.java</file>
+            <file>file:/C:/Users/macas/Documents/GitHub/UNContactsBook/ContactsBook/src/Logic/RemoveContact.java</file>
+            <file>file:/C:/Users/macas/Documents/GitHub/UNContactsBook/ContactsBook/src/UI/ContactsBookGUI.java</file>
+            <file>file:/C:/Users/macas/Documents/GitHub/UNContactsBook/ContactsBook/src/Logic/ContactsBook.java</file>
+            <file>file:/C:/Users/macas/Documents/GitHub/UNContactsBook/ContactsBook/src/UI/ContactsBookUI.java</file>
+        </group>
     </open-files>
 </project-private>
